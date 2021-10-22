@@ -1,0 +1,109 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+.header{
+        color: white;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 130px 1fr 200px;
+    align-items: center;
+}
+img {
+    width: 100%;
+}
+p {
+    font-size: 20px;
+}
+.left-menu-1{
+    background-color: rgb(73, 87, 170);
+    color: white;
+    grid-area: left-menu-1;
+}
+.left-menu-2{
+    background-color: rgb(170, 62, 129);
+    color: white;
+    grid-area: left-menu-2;
+}
+.main{
+    background-color: rgb(46, 111, 131);
+    color: white;
+    grid-area: main;
+}
+.right-menu-1{
+    background-color: rgb(139, 118, 86);
+    color: white;
+    grid-area: right-menu-1;
+}
+.right-menu-2{
+    background-color: rgb(67, 105, 58);
+    color: white;
+    grid-area: right-menu-2;
+}
+.container{
+    display: grid;
+    grid-template:
+    'header         header  header          header' 64px
+    'left-menu-1    main    right-menu-1    right-menu-2' 1fr
+    'left-menu-2    main    right-menu-1    right-menu-2' 1fr /
+    130px            1fr     150px             50px;
+    height: 100vh;
+    width: 100wh;
+    /* padding: 30px; */
+    /* grid-gap: 10px; */
+}
+@media screen and (max-width: 600px) {
+    .right-menu-2 {
+      display: none;
+    }
+  
+    .container {
+      grid-template:
+        'header     header header' 64px
+        'left-menu-1  main right-menu-1' 1fr
+        'left-menu-2  main right-menu-1' 1fr /
+        130px 1fr 150px;
+    }
+}
+  
+@media screen and (max-width: 500px) {
+    .right-menu-1{
+        display: none;
+    }
+    .container {
+      grid-template:
+        'header         header' 64px
+        'left-menu-1    main' 200px
+        'left-menu-2    main' 1fr /
+        130px 1fr;
+    }
+}
+.leftMenuHeader{
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+}
+.leftMenuHeader .hamburger-icon{
+    padding: 8px;
+}
+.leftMenuHeader .gmail-logo img{
+    width: 80px;
+}
+.searchBar{
+    display: grid;
+    padding: 5px;
+}
+.searchBar input{
+    border-radius: 7px;
+    background-color: #f0f3f4;
+    border: none;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+.rightMenuHeader{
+    background-color: rgb(87, 131, 121);
+}
